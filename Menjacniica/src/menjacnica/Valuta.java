@@ -1,21 +1,30 @@
 package menjacnica;
 
 public class Valuta {
-	
+
 	private String imeValute;
 	private String skracenoIme;
+
 	public String getImeValute() {
 		return imeValute;
 	}
+
 	public void setImeValute(String imeValute) {
+		if (imeValute == null || imeValute.isEmpty())
+			throw new RuntimeException("Morate uneti imeValute");
 		this.imeValute = imeValute;
 	}
+
 	public String getSkracenoIme() {
 		return skracenoIme;
 	}
+
 	public void setSkracenoIme(String skracenoIme) {
+		if (skracenoIme == null || skracenoIme.isEmpty())
+			throw new RuntimeException("Morate uneti skraceno ime");
 		this.skracenoIme = skracenoIme;
 	}
+
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -25,6 +34,7 @@ public class Valuta {
 				+ ((skracenoIme == null) ? 0 : skracenoIme.hashCode());
 		return result;
 	}
+
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -45,10 +55,10 @@ public class Valuta {
 			return false;
 		return true;
 	}
+
 	public String toString() {
 		return "Valuta [imeValute=" + imeValute + ", skracenoIme="
 				+ skracenoIme + "]";
 	}
-	
 
 }
