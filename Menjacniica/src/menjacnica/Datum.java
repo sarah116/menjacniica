@@ -2,6 +2,7 @@ package menjacnica;
 
 public class Datum {
 
+	private String datumKursa;
 	private int prodajniKurs;
 	private int kupovniKurs;
 	private int srednjiKurs;
@@ -37,13 +38,16 @@ public class Datum {
 	}
 
 	public String toString() {
-		return "Datum [prodajniKurs=" + prodajniKurs + ", kupovniKurs="
-				+ kupovniKurs + ", srednjiKurs=" + srednjiKurs + "]";
+		return "Datum [datumKursa=" + datumKursa + ", prodajniKurs="
+				+ prodajniKurs + ", kupovniKurs=" + kupovniKurs
+				+ ", srednjiKurs=" + srednjiKurs + "]";
 	}
 
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result
+				+ ((datumKursa == null) ? 0 : datumKursa.hashCode());
 		result = prime * result + kupovniKurs;
 		result = prime * result + prodajniKurs;
 		result = prime * result + srednjiKurs;
@@ -58,6 +62,11 @@ public class Datum {
 		if (getClass() != obj.getClass())
 			return false;
 		Datum other = (Datum) obj;
+		if (datumKursa == null) {
+			if (other.datumKursa != null)
+				return false;
+		} else if (!datumKursa.equals(other.datumKursa))
+			return false;
 		if (kupovniKurs != other.kupovniKurs)
 			return false;
 		if (prodajniKurs != other.prodajniKurs)
@@ -67,4 +76,14 @@ public class Datum {
 		return true;
 	}
 
+	public String getDatum() {
+		return datumKursa;
+	}
+
+	public void setDatum(String datumKursa) {
+		if(!datumKursa.contains("."))  throw new RuntimeException("Datum neispravno unet");
+		this.datumKursa = datumKursa;
+	}
+
+	
 }
