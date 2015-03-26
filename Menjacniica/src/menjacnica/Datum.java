@@ -1,32 +1,46 @@
 package menjacnica;
 
 public class Datum {
-	
+
 	private int prodajniKurs;
 	private int kupovniKurs;
 	private int srednjiKurs;
+
 	public int getProdajniKurs() {
 		return prodajniKurs;
 	}
+
 	public void setProdajniKurs(int prodajniKurs) {
+		if (prodajniKurs <= 0)
+			throw new RuntimeException("Kurs ne sme biti 0 ili manji");
 		this.prodajniKurs = prodajniKurs;
 	}
+
 	public int getKupovniKurs() {
 		return kupovniKurs;
 	}
+
 	public void setKupovniKurs(int kupovniKurs) {
+		if (kupovniKurs <= 0)
+			throw new RuntimeException("Kurs ne sme biti 0 ili manji");
 		this.kupovniKurs = kupovniKurs;
 	}
+
 	public int getSrednjiKurs() {
 		return srednjiKurs;
 	}
+
 	public void setSrednjiKurs(int srednjiKurs) {
+		if (srednjiKurs <= 0)
+			throw new RuntimeException("Kurs ne sme biti 0 ili manji");
 		this.srednjiKurs = srednjiKurs;
 	}
+
 	public String toString() {
 		return "Datum [prodajniKurs=" + prodajniKurs + ", kupovniKurs="
 				+ kupovniKurs + ", srednjiKurs=" + srednjiKurs + "]";
 	}
+
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -35,6 +49,7 @@ public class Datum {
 		result = prime * result + srednjiKurs;
 		return result;
 	}
+
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -51,6 +66,5 @@ public class Datum {
 			return false;
 		return true;
 	}
-	
 
 }
