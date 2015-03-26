@@ -37,12 +37,14 @@ public class Datum {
 		this.srednjiKurs = srednjiKurs;
 	}
 
+	@Override
 	public String toString() {
 		return "Datum [datumKursa=" + datumKursa + ", prodajniKurs="
 				+ prodajniKurs + ", kupovniKurs=" + kupovniKurs
 				+ ", srednjiKurs=" + srednjiKurs + "]";
 	}
 
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -54,6 +56,7 @@ public class Datum {
 		return result;
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -76,6 +79,7 @@ public class Datum {
 		return true;
 	}
 
+
 	public String getDatum() {
 		return datumKursa;
 	}
@@ -85,5 +89,6 @@ public class Datum {
 		this.datumKursa = datumKursa;
 	}
 
+	
 	
 }
